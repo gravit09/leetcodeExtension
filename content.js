@@ -117,11 +117,14 @@ function injectHintButton() {
 
     const code = getEditorCode();
     try {
-      const response = await fetch("http://localhost:3001/api/hint", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ code }),
-      });
+      const response = await fetch(
+        "https://extensionserver.onrender.com/api/hint",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ code }),
+        }
+      );
 
       const data = await response.json();
       hintContainer.innerHTML = `<div style="margin-right: 20px;">${data.hint}</div>`;

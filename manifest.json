@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "LeetCode Helper",
+  "version": "1.0",
+  "description": "Get hints and suggestions while solving problems on LeetCode.",
+  "permissions": ["scripting", "activeTab", "storage"],
+  "host_permissions": ["https://leetcode.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/problems/*"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}
